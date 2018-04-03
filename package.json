@@ -1,0 +1,19 @@
+{
+  "name": "hpe-onesphere-js-alexa",
+  "version": "0.0.1",
+  "scripts": {
+    "lint": "node ./node_modules/.bin/eslint ./**/*.js *.js",
+    "lint:fix": "node ./node_modules/.bin/eslint ./**/*.js *.js --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "alexa-sdk": "1.0.24",
+    "superagent": "^3.8.2",
+    "aws-sdk": "2.188.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  }
+}

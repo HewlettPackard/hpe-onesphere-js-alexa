@@ -1,0 +1,234 @@
+{
+  "languageModel": {
+    "invocationName": "one sphere",
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "slots": [],
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "slots": [],
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "slots": [],
+        "samples": []
+      },
+      {
+        "name": "DemoFirstQuestionIntent",
+        "slots": [],
+        "samples": [
+          "what do you think of One Sphere"
+        ]
+      },
+      {
+        "name": "LobSpendCurrentMonthIntent",
+        "slots": [],
+        "samples": [
+          "which line of business has the highest spend this month"
+        ]
+      },
+      {
+        "name": "ProjectsTopSpendCurrentMonthIntent",
+        "slots": [],
+        "samples": [
+          "which project has the highest spend this month",
+          "which project has the highest spend"
+        ]
+      },
+      {
+        "name": "ProjectsTotalSpendCurrentMonthIntent",
+        "slots": [],
+        "samples": [
+          "what's my spend across projects",
+          "for my spend across projects",
+          "for my project spend this month",
+          "what is my spend across projects",
+          "my project spend this month",
+          "my spend across projects"
+        ]
+      },
+      {
+        "name": "ProviderTypesExtendedStatusIntent",
+        "slots": [],
+        "samples": [
+          "how are my cloud providers doing",
+          "how are my One Sphere cloud providers doing",
+          "what is my provider status",
+          "what is my cloud status",
+          "how are my clouds doing",
+          "how are my clouds",
+          "how are my providers doing"
+        ]
+      },
+      {
+        "name": "RegionStatusIntent",
+        "slots": [
+          {
+            "name": "Provider",
+            "type": "OneSphereProvider"
+          }
+        ],
+        "samples": [
+          "what are my {Provider} regions",
+          "what are the regions in {Provider}",
+          "what are my regions in {Provider}",
+          "what regions are there in {Provider}"
+        ]
+      },
+      {
+        "name": "TotalSpendAcrossProvidersIntent",
+        "slots": [
+          {
+            "name": "Month",
+            "type": "AMAZON.Month"
+          }
+        ],
+        "samples": [
+          "what is my total spend for the month",
+          "what is my total spend for {Month}",
+          "how much are we spending this month",
+          "what is the {Month} spend",
+          "how much is spent in {Month}"
+        ]
+      },
+      {
+        "name": "UtilizationAcrossHybridCloudsIntentByProviderType",
+        "slots": [
+          {
+            "name": "Provider",
+            "type": "OneSphereProvider"
+          }
+        ],
+        "samples": [
+          "what is the utilization of my {Provider}",
+          "what is my {Provider} utilization",
+          "what is the utilization of my {Provider} provider",
+          "what's the utilization score of {Provider}"
+        ]
+      },
+      {
+        "name": "ZoneStatusByRegionIntent",
+        "slots": [
+          {
+            "name": "Region",
+            "type": "OneSphereRegion"
+          }
+        ],
+        "samples": [
+          "the status of my zones in {Region} region",
+          "zone status in {Region}"
+        ]
+      }
+    ],
+    "types": [
+      {
+        "name": "OneSphereProject",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "Executive Dashboard",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "OneSphereProvider",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "Private Cloud",
+              "synonyms": [
+                "HPE Private Cloud"
+              ]
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "Amazon Web Services",
+              "synonyms": [
+                "A.W.S."
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "OneSphereRegion",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "PaloAlto-CA",
+              "synonyms": [
+                "PaloAlto",
+                "Palo Alto"
+              ]
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "Houston",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "Fort Collins",
+              "synonyms": [
+                "Ft Collins"
+              ]
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "Roseville",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "dialog": {
+    "intents": [
+      {
+        "name": "ZoneStatusByRegionIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Region",
+            "type": "OneSphereRegion",
+            "confirmationRequired": false,
+            "elicitationRequired": true,
+            "prompts": {
+              "elicitation": "Elicit.Intent-ZoneStatusByRegionIntent.IntentSlot-Region"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-ZoneStatusByRegionIntent.IntentSlot-Region",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What is your region?"
+        }
+      ]
+    }
+  ]
+}
